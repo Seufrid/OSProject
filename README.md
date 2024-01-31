@@ -502,17 +502,31 @@ total 0
 sudo chown -R codespace:codespace myroot
 
 ```
-***
-```
 
-```***
+```
+Link to commit: https://github.com/Seufrid/OSProject/commit/1d2d9ba64eab621a2c592ffc9a77bfcfdddafb3a
+
+Commands used:
+@Seufrid ➜ /workspaces/OSProject/myroot (main) $ sudo chown -R codespace:codespace /workspaces/OSProject/myroot
+@Seufrid ➜ /workspaces/OSProject/myroot (main) $ ls -l /workspaces/OSProject/myroot
+total 0
+-rw-rw-rw- 1 codespace codespace 0 Jan 31 16:30 testfile
+-rw-rw-rw- 1 codespace codespace 0 Jan 31 16:48 testfile.txt
+@Seufrid ➜ /workspaces/OSProject/myroot (main) $ git init
+Reinitialized existing Git repository in /workspaces/OSProject/myroot/.git/
+@Seufrid ➜ /workspaces/OSProject/myroot (main) $ git add .
+@Seufrid ➜ /workspaces/OSProject/myroot (main) $ git commit -m "change permission"
+[main 41f5dac] change permission
+ 2 files changed, 2 insertions(+)
+ create mode 100644 testfile.txt
+```
 
 ## You are on your own, create your own static webpage
 
 1. Create a directory called webpage in your host machine
 2. Inside the directory, create a page index.html, with any content you would like
 3. Then, run the apache webserver and mount the webpage directory to it. Hint:
-```bash
+```
 ## the -p 8080:80 flag points the host port 8080 to the container port 80
 
 docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ -p 8080:80 httpd
@@ -533,10 +547,21 @@ docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ 
 
 1. What is the permission of folder /usr/local/apache/htdocs and what user and group owns the folder? . ***(2 mark)***
 ```
+The folder /usr/local/apache2/htdocs within the container has drwxrwxrwx+ permissions, indicating it's a directory accessible with read, write, and execute permissions by the owner, group, and all other users. The + symbol signifies additional access control entries. Ownership of this directory is assigned to both the user and group with IDs of 1000, which typically corresponds to a non-root user in the Docker host environment.
 
+Commands used:
+@Seufrid ➜ /workspaces/OSProject/myroot (main) $ docker exec -it jolly_cohen bash
+root@395e0792784f:/usr/local/apache2# ls -ld /usr/local/apache2/htdocs
+drwxrwxrwx+ 2 1000 1000 4096 Jan 31 16:57 /usr/local/apache2/htdocs
 ```
 2. What port is the apache web server running. ***(1 mark)***
+```
+Port 80
+```
 3. What port is open for http protocol on the host machine? ***(1 mark)***
+```
+Port 8080
+```
 
 ## What to submit
 
