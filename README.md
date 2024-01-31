@@ -10,10 +10,7 @@ Team Mates:
 ## Rules
 1. You are allowed to have **3 group** members. *Exception* is allowed **IFF (if and only if)** you are allowed to have 4 group members if you are a **multinational** or a **multigender** group. 
 2. When you complete the project, make sure to submit the repository link of your cloned project. Make sure all the files are as what you aspect in your repository. 
-3. Answer all questions in the **README.md**, in your own repository. Either use the online VSCode, terminal or github to edit. Answers are expected where you see
-```
-
-```
+3. Answer all questions in the **README.md**, in your own repository. Either use the online VSCode, terminal or github to edit. Answers are expected where you see **Fill answer here.**
 4. Learn how to use markdown. https://www.w3schools.io/file/markdown-introduction/
 
 ## Forking this OS project repository
@@ -30,9 +27,6 @@ Team Mates:
 https://github.com/Seufrid/OSProject
 ```
 2. How many files and folders are in this repository. ***(1 mark)***
-```
-
-```
 ```
 7 files, and 1 folder only
 ```
@@ -69,7 +63,7 @@ https://github.com/Seufrid/OSProject
 
 1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)***
 ```
-The default OS is Linux
+The default OS is Ubuntu Linux
 ```
 2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)***
 ```
@@ -337,7 +331,7 @@ Swap:            0B          0B          0B
 ```
 12. What is the available disk space mounted on /workspace. ***(1 mark)***
 ```
-Free memory is 17 GB
+Free disk space is 17 GB
 
 Command used:
 @Seufrid ➜ /workspaces/OSProject (main) $ df -h /workspaces
@@ -365,10 +359,7 @@ The ls command lists the names of files and directories in the current directory
 ```
 15. What is the TLB size of the Virtual CPU. ***(1 mark)***
 ```
-TLB size is 32 MB
-
-@Seufrid ➜ /workspaces/OSProject (main) $ lscpu | grep "L3 cache"
-L3 cache:                           32 MiB
+TLB size is 2560 4K pages
 ```
 16. What is the CPU speed of the Virtual CPU. ***(1 mark)***
 ```
@@ -463,7 +454,7 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 
 1. Are files in the container persistent. Why not?. ***(1 mark)***
 ```
-Yes, files in a Docker container are persistent as long as the container exists. They are maintained across restarts but lost if the container is deleted.
+No, files in a Docker container are not persistent by default
 ```
 2. Can we run two, or three instances of debian linux? . ***(1 mark)***
 ```
@@ -542,6 +533,10 @@ docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ 
 6. You can then access your website by adding an index.html towards the end of your url link, like the one below. 
 
  <img src="./images/helloworldweb.png" width="70%">
+
+
+***Website:***
+![Alt text](image.png)
 
 ***Questions:***
 
